@@ -1,8 +1,8 @@
 {
-  "name": "express-locallibrary-tutorial",
+  "name": "test-app",
   "version": "0.0.0",
   "engines": {
-    "node": "8.9.1"
+    "node": "14.0.0"
   },
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "ejs": "^3.1.6",
     "express": "~4.16.2",
     "express-session": "^1.15.6",
     "express-validator": "^4.3.0",
@@ -24,14 +25,7 @@
     "moment": "^2.20.1",
     "mongoose": "^5.0.1",
     "morgan": "~1.9.0",
-    "nodemailer": "^4.6.0",
-    "npm": "^5.7.1",
-    "passport": "^0.4.0",
-    "passport-facebook": "^2.1.1",
-    "passport-google-oauth": "^1.0.0",
-    "passport-local": "^1.0.0",
-    "pug": "~2.0.0-rc.4",
-    "serve-favicon": "~2.4.5"
+    "npm": "^5.7.1"
   },
   "devDependencies": {
     "nodemon": "^1.14.11"

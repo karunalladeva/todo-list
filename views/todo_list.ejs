@@ -1,0 +1,68 @@
+<div class="container-fluid mt-5">
+    <div>
+        <div class="d-flex justify-content-end mr-5 my-2">
+            <form action="/todo" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Title</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"
+                        name="title">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Description</label>
+                    <input type="password" class="form-control" name="description" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Assigned_to</label>
+                    <select class="form-control" name="assigned_to">
+                        <% for(var i=0; i < userList.length; i++) { %>
+                            <option value="<%= userList[i]._id %>">
+                                <%= userList[i].first_name %>
+                            </option>
+                            <% } %>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Assigned User</th>
+                    <th scope="col">Is Done</th>
+                    <th scope="col">Is Deleted</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < todo_list.length; i++) { %>
+                    <tr>
+                        <th scope="row">
+                            <%= todo_list[i]._id %>
+                        </th>
+                        <td>
+                            <%= todo_list[i].title %>
+                        </td>
+                        <td>
+                            <%= todo_list[i].description %>
+                        </td>
+                        <td>
+                            <%= todo_list[i].assigned_to %>
+                        </td>
+                        <td>
+                            <%= todo_list[i].is_done %>
+                        </td>
+                        <td>
+                            <%= todo_list[i].is_deleted %>
+                        </td>
+                        <td><a href="/todo/<%= todo_list[i]._id %>">view</a></td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
